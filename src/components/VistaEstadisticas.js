@@ -3,17 +3,6 @@
  */
 import React, {PropTypes} from 'react';
 
-export class Estadisticas {
-  grupos: number;
-  periodos: number;
-  asignaturas: number;
-  constructor(grupos: number, periodos: number, asignaturas: number) {
-    this.grupos = grupos;
-    this.periodos = periodos;
-    this.asignaturas = asignaturas;
-  }
-}
-
 const VistaEstadisticas = ({estadisticas}) => (
   <ul>
     <li>Grupos <span>{estadisticas.grupos}</span></li>
@@ -23,7 +12,11 @@ const VistaEstadisticas = ({estadisticas}) => (
 );
 
 VistaEstadisticas.propTypes = {
-  estadisticas: PropTypes.instanceOf(Estadisticas).isRequired
+  estadisticas: PropTypes.shape({
+    grupos: PropTypes.number.isRequired,
+    periodos: PropTypes.number.isRequired,
+    asignaturas: PropTypes.number.isRequired,
+  }).isRequired
 };
 
 export default VistaEstadisticas;

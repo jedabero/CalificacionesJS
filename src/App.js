@@ -2,13 +2,17 @@
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
 
-import VistaEstadisticas, {Estadisticas} from './components/VistaEstadisticas';
+import VistaEstadisticas from './components/VistaEstadisticas';
 import './App.css';
 
 class App extends Component {
 
   render() {
-    const e = new Estadisticas(0, 0, 0);
+    const e = {
+      grupos: 0,
+      periodos: 0,
+      asignaturas: 0
+    };
     return (
       <div className="App">
         <div className="App-header">
