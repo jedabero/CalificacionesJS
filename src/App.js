@@ -1,11 +1,14 @@
 // @flow
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
 
+import VistaEstadisticas, {Estadisticas} from './components/VistaEstadisticas';
 import './App.css';
 
 class App extends Component {
+
   render() {
+    const e = new Estadisticas(0, 0, 0);
     return (
       <div className="App">
         <div className="App-header">
@@ -17,11 +20,7 @@ class App extends Component {
         </div>
         <div className="App-intro">
           <div>
-            <ul>
-              <li>Grupos <span>{0}</span></li>
-              <li>Periodos <span>{0}</span></li>
-              <li>Asignaturas <span>{0}</span></li>
-            </ul>
+            <VistaEstadisticas estadisticas={e}/>
             <div>
               {this.props.children || <Link to="/grupos">Ver Grupos</Link>}
             </div>
