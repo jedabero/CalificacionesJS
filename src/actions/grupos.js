@@ -9,7 +9,7 @@ let grupoId = 0;
 export function agregarGrupo(nombre) {
   return {
     type: AGREGAR_GRUPO,
-    id: grupoId++,
+    id: ++grupoId,
     estado: 1,
     nombre
   }

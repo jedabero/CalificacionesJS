@@ -5,11 +5,16 @@ import React, {PropTypes} from 'react';
 
 import ItemGrupo from './ItemGrupo';
 
+const style = {
+  paddingLeft: '0'
+};
+
 const ListaGrupo = ({grupos, onGrupoClick}) => (
-  <ul>
+  <ul style={style}>
     {grupos.map(g =>
       <ItemGrupo
         key={g.id}
+        id={g.id}
         estado={g.estado}
         nombre={g.nombre}
         onClick={() => onGrupoClick(g.id)}

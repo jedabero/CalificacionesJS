@@ -23,7 +23,7 @@ class Grupos extends Component {
     }
 
     return (
-      <div>
+      <div style={{textAlign: 'start'}}>
         <h3>Grupos</h3>
         <FormularioGrupo
           nombreLabel="Nuevo grupo"
