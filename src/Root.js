@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Provider} from 'react-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
 import './index.css';
@@ -17,7 +17,7 @@ const Asignatura = ({params, children}) => (<div><div>Asignatura #{params.asigna
 
 const Root = ({store}) => (
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <Router history={hashHistory}>
       <Route path="/" component={App}>
         <Route path="grupos" component={Grupos}>
           <Route path=":grupoId" component={Grupo}>
