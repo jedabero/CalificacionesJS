@@ -4,11 +4,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import {agregarGrupo} from '../../actions/grupos';
 import ListaGrupo from '../../components/grupos/ListaGrupo';
+import FormularioGrupo from './FormularioGrupo';
 
 class Grupos extends Component {
+  componentDidMount() {
+    // TODO cargar grupos del store
+  }
+
   render () {
-    const {children, grupos, onGrupoClick} = this.props;
+    const {children, grupos, onGuardar, onGrupoClick} = this.props;
     let content;
     if (grupos.length === 0) {
       content = <span>No hay grupos</span>;
@@ -19,6 +25,10 @@ class Grupos extends Component {
     return (
       <div>
         <h3>Grupos</h3>
+        <FormularioGrupo
+          nombreLabel="Nuevo grupo"
+          onGuardar={onGuardar}
+        />
         <div>{children || content}</div>
       </div>
     );
@@ -34,6 +44,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    onGuardar: (nombre) => {
+      dispatch(agregarGrupo(nombre));
+    },
     onGrupoClick: id => {
       console.log(`Grupo #${id}`)
     }
