@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
-import AppGrupos from './containers/grupos/AppGrupos';
+import Grupos from './containers/grupos/Grupos';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
@@ -19,7 +19,7 @@ const Root = ({store}) => (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-        <Route path="grupos" component={AppGrupos}>
+        <Route path="grupos" component={Grupos}>
           <Route path=":grupoId" component={Grupo}>
             <Route path="periodos" component={Periodos}>
               <Route path=":periodoId" component={Periodo}>
