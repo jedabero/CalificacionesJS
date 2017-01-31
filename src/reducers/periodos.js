@@ -33,7 +33,7 @@ function periodos(state = [], action) {
     case AGREGAR_PERIODO:
       return [...state, periodo(undefined, action)];
     case ACTUALIZAR_PERIODO:
-      return state.map(g => periodo(g, action));
+      return state.map(p => periodo(p, action));
     default:
       return state;
   }
