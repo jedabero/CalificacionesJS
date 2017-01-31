@@ -7,7 +7,7 @@ import appReducer from './reducers/index';
 import './index.css';
 
 const store = createStore(appReducer);
-console.log(store, store.getState());
+
 ReactDOM.render(
   <Root store={store}/>,
   document.getElementById('root')

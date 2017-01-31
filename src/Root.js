@@ -3,12 +3,12 @@ import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
+import AppGrupos from './containers/grupos/AppGrupos';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
 const Logout = () => (<div>Logout</div>);
 const Registro = () => (<div>Registro</div>);
-const Grupos = ({children}) => (<div><div>Grupos</div><div>{children}</div></div>);
 const Grupo = ({params, children}) => (<div><div>Grupo #{params.grupoId}</div><div>{children}</div></div>);
 const Periodos = ({params, children}) => (<div><div>Periodos</div><div>{children}</div></div>);
 const Periodo = ({params, children}) => (<div><div>Periodo #{params.periodoId}</div><div>{children}</div></div>);
@@ -19,7 +19,7 @@ const Root = ({store}) => (
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-        <Route path="grupos" component={Grupos}>
+        <Route path="grupos" component={AppGrupos}>
           <Route path=":grupoId" component={Grupo}>
             <Route path="periodos" component={Periodos}>
               <Route path=":periodoId" component={Periodo}>
