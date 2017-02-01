@@ -6,7 +6,14 @@ import Root from './Root';
 import appReducer from './reducers/index';
 import './index.css';
 
-const store = createStore(appReducer);
+const state = localStorage.getItem('state');
+const persistedState = state ? JSON.parse(state) : {};
+
+const store = createStore(appReducer, persistedState);
+
+/*let unsubscribe = */store.subscribe(() => {
+  localStorage.setItem('state', JSON.stringify(store.getState()));
+});
 
 ReactDOM.render(
   <Root store={store}/>,

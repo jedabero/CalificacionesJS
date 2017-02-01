@@ -39,10 +39,7 @@ const mapDispatchToProps = (dispatch, {router}) => {
       dispatch(agregarGrupo(nombre));
     },
     onGrupoClick: grupo => {
-      router.push({
-        pathname: `/grupos/${grupo.id}`,
-        state: grupo
-      });
+      router.push(`/grupos/${grupo.id}`);
     }
   }
 };
