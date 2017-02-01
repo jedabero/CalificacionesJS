@@ -4,13 +4,10 @@
 import React, {PropTypes} from 'react';
 
 import ItemGrupo from './ItemGrupo';
-
-const style = {
-  paddingLeft: '0'
-};
+import './ListaGrupo.css'
 
 const ListaGrupo = ({grupos, onGrupoClick}) => (
-  <ul style={style}>
+  <ul className="lista-grupo">
     {grupos.map(g =>
       <ItemGrupo
         key={g.id}

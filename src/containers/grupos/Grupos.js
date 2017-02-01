@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {agregarGrupo} from '../../actions/grupos';
 import ListaGrupo from '../../components/grupos/ListaGrupo';
 import FormularioGrupo from './FormularioGrupo';
+import './Grupos.css';
 
 class Grupos extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ class Grupos extends Component {
     }
 
     return (
-      <div style={{textAlign: 'start'}}>
+      <div className="modulo-grupos">
         <h3>Grupos</h3>
         <FormularioGrupo
           nombreLabel="Nuevo grupo"

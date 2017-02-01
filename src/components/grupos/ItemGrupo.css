@@ -1,0 +1,29 @@
+.item-grupo {
+  display: block;
+  cursor: pointer;
+  border: 1px solid #DDDDDD;
+  padding: 8px 16px;
+  margin-bottom: -1px;
+  color: black;
+}
+
+.item-grupo:hover {
+  background-color: #F0F0F0;
+}
+
+.item-grupo.disabled {
+  color: gray
+}
+
+.item-grupo > .badge {
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+}
+
+.item-grupo.disabled > .badge {
+    background-color: gray;
+}

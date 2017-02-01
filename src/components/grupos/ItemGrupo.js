@@ -3,34 +3,12 @@
  */
 import React, {PropTypes} from 'react';
 
-const style = {
-  item: estado => {
-    return {
-      display: 'block',
-      cursor: 'pointer',
-      border: '1px solid #DDDDDD',
-      padding: '8px 16px',
-      marginBottom: '-1px',
-      color: estado === 1 ? 'black': 'gray'
-    }
-  },
-  badge: estado => {
-    return {
-      padding: '4px 8px',
-      textAlign: 'center',
-      verticalAlign: 'middle',
-      borderRadius: '10px',
-      color: 'white',
-      backgroundColor: estado === 1 ? 'red': 'gray'
-    }
-  }
-};
+import './ItemGrupo.css';
 
 const ItemGrupo = ({id, estado, nombre, onClick}) => (
-  <li
-    style={style.item(estado)}
+  <li className={`item-grupo${estado === 1 ? "" : " disabled" }`}
     onClick={onClick} >
-    <span style={style.badge(estado)}>{id}</span> {nombre}
+    <span className="badge">{id}</span> {nombre}
   </li>
 );
 
