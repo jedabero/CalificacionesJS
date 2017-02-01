@@ -1,41 +1,31 @@
 /**
  * Created by jedabero on 30/01/17.
  */
-import React, {Component} from 'react';
+import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 
 import {agregarGrupo} from '../../actions/grupos';
+import Grupo from '../../shapes/Grupo';
 import ListaGrupo from '../../components/grupos/ListaGrupo';
 import FormularioGrupo from './FormularioGrupo';
 import './Grupos.css';
 
-class Grupos extends Component {
-  componentDidMount() {
-    // TODO cargar grupos del store
-  }
+const Grupos = ({children, grupos, onGuardar, onGrupoClick}) => {
+  if (children) return children;
+  return (
+    <div className="modulo-grupos">
+      <h3>Grupos</h3>
+      <FormularioGrupo nombreLabel="Nuevo grupo" onGuardar={onGuardar}/>
+      <ListaGrupo grupos={grupos} onGrupoClick={onGrupoClick}/>
+    </div>
+  );
+};
 
-  render () {
-    const {children, grupos, onGuardar, onGrupoClick} = this.props;
-    let content;
-    if (grupos.length === 0) {
-      content = <span>No hay grupos</span>;
-    } else {
-      content = <ListaGrupo grupos={grupos} onGrupoClick={onGrupoClick}/>;
-    }
-
-    return (
-      <div className="modulo-grupos">
-        <h3>Grupos</h3>
-        <FormularioGrupo
-          nombreLabel="Nuevo grupo"
-          onGuardar={onGuardar}
-        />
-        <div>{children || content}</div>
-      </div>
-    );
-  }
-}
-
+Grupos.propTypes = {
+  grupos: PropTypes.arrayOf(Grupo.isRequired).isRequired,
+  onGuardar: PropTypes.func,
+  onGrupoClick: PropTypes.func
+};
 
 const mapStateToProps = state => {
   return {
@@ -43,13 +33,16 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, {router}) => {
   return {
     onGuardar: (nombre) => {
       dispatch(agregarGrupo(nombre));
     },
-    onGrupoClick: id => {
-      console.log(`Grupo #${id}`)
+    onGrupoClick: grupo => {
+      router.push({
+        pathname: `/grupos/${grupo.id}`,
+        state: grupo
+      });
     }
   }
 };

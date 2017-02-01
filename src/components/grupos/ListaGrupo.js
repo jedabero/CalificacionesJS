@@ -3,30 +3,27 @@
  */
 import React, {PropTypes} from 'react';
 
+import Grupo from '../../shapes/Grupo';
 import ItemGrupo from './ItemGrupo';
 import './ListaGrupo.css'
 
-const ListaGrupo = ({grupos, onGrupoClick}) => (
-  <ul className="lista-grupo">
-    {grupos.map(g =>
-      <ItemGrupo
-        key={g.id}
-        id={g.id}
-        estado={g.estado}
-        nombre={g.nombre}
-        onClick={() => onGrupoClick(g.id)}
-      />
-    )}
-  </ul>
-);
+const ListaGrupo = ({grupos, onGrupoClick}) => {
+  if (grupos.length === 0) return <span>No hay grupos</span>;
+  return (
+    <ul className="lista-grupo">
+      {grupos.map(g =>
+        <ItemGrupo
+          key={g.id}
+          grupo={g}
+          onClick={() => onGrupoClick(g)}
+        />
+      )}
+    </ul>
+  )
+};
 
 ListaGrupo.propTypes = {
-  grupos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    estado: PropTypes.number.isRequired,
-    nombre: PropTypes.string.isRequired,
-    onClick: PropTypes.func
-  }).isRequired).isRequired,
+  grupos: PropTypes.arrayOf(Grupo.isRequired).isRequired,
   onGrupoClick: PropTypes.func
 };
 

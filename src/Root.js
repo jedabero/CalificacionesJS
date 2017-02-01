@@ -4,12 +4,12 @@ import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
 import Grupos from './containers/grupos/Grupos';
+import Grupo from './containers/grupos/DetalleGrupo';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
 const Logout = () => (<div>Logout</div>);
 const Registro = () => (<div>Registro</div>);
-const Grupo = ({params, children}) => (<div><div>Grupo #{params.grupoId}</div><div>{children}</div></div>);
 const Periodos = ({params, children}) => (<div><div>Periodos</div><div>{children}</div></div>);
 const Periodo = ({params, children}) => (<div><div>Periodo #{params.periodoId}</div><div>{children}</div></div>);
 const Asignaturas = ({params, children}) => (<div><div>Asignaturas</div><div>{children}</div></div>);

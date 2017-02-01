@@ -3,19 +3,18 @@
  */
 import React, {PropTypes} from 'react';
 
+import Grupo from '../../shapes/Grupo';
 import './ItemGrupo.css';
 
-const ItemGrupo = ({id, estado, nombre, onClick}) => (
-  <li className={`item-grupo${estado === 1 ? "" : " disabled" }`}
+const ItemGrupo = ({grupo, onClick}) => (
+  <li className={`item-grupo${grupo.estado === 1 ? "" : " disabled" }`}
     onClick={onClick} >
-    <span className="badge">{id}</span> {nombre}
+    <span className="badge">{grupo.id}</span> {grupo.nombre}
   </li>
 );
 
 ItemGrupo.propTypes = {
-  id: PropTypes.number,
-  estado: PropTypes.number.isRequired,
-  nombre: PropTypes.string.isRequired,
+  grupo: Grupo.isRequired,
   onClick: PropTypes.func
 };
 

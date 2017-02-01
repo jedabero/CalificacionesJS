@@ -13,9 +13,18 @@ class FormularioGrupo extends Component {
     };
   }
 
+  handleClick = event => {
+    event.preventDefault();
+    const trimmedNombre = this.state.nombre.trim();
+    if (trimmedNombre.length > 0) {
+      this.setState({nombre: ''});
+      this.props.onGuardar(trimmedNombre);
+    }
+  };
+
   render() {
     const {nombre} = this.state;
-    const {nombreLabel, onGuardar} = this.props;
+    const {nombreLabel} = this.props;
     return (
       <form className="form">
         <div className="input-group">
@@ -29,17 +38,7 @@ class FormularioGrupo extends Component {
             value={nombre}
             onChange={event => this.setState({nombre: event.target.value})} />
         </div>
-        <button
-          className="form-button"
-          onClick={event => {
-            event.preventDefault();
-            const trimmedNombre = nombre.trim();
-            if (trimmedNombre.length > 0) {
-              this.setState({nombre: ''});
-              onGuardar(trimmedNombre);
-            }
-          }}
-        >
+        <button className="form-button" onClick={this.handleClick}>
           Guardar
         </button>
       </form>
