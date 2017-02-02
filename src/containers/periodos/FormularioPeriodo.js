@@ -13,10 +13,8 @@ class FormularioPeriodo extends Component {
     };
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log(this.props, nextProps);
-    console.log(this.state, nextState);
-    return true;
+  componentWillReceiveProps ({nombre, orden}) {
+    this.setState({nombre, orden});
   }
 
   handleClick = event => {
