@@ -9,14 +9,22 @@ import {actualizarGrupo} from '../../actions/grupos';
 import Grupo from '../../shapes/Grupo';
 import FormularioGrupo from './FormularioGrupo';
 
-const DetalleGrupo = ({children, grupo, onGuardar}) => children || (
-  <div>
-    <div>Grupo #{grupo.id}</div>
-    <div>{grupo.nombre}</div>
-    <FormularioGrupo editing nombre={grupo.nombre} onGuardar={nombre => onGuardar(grupo.id, grupo.estado, nombre)}/>
-    {children || <Link to={`/grupos/${grupo.id}/periodos`}>Ver periodos</Link>}
-  </div>
-);
+const DetalleGrupo = ({children, grupo, onGuardar}) => {
+  if (children) return children;
+  const handleGuardar = nombre => onGuardar(grupo.id, grupo.estado, nombre);
+  return (
+    <div>
+      <div>Grupo #{grupo.id}</div>
+      <div>{grupo.nombre}</div>
+      <FormularioGrupo
+        editing
+        nombre={grupo.nombre}
+        onGuardar={handleGuardar}
+      />
+      {children || <Link to={`/grupos/${grupo.id}/periodos`}>Ver periodos</Link>}
+    </div>
+  );
+};
 
 const mapStateToProps = (state, props) => {
   const {grupoId} = props.params,

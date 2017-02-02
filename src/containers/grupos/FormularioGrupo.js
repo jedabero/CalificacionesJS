@@ -14,12 +14,13 @@ class FormularioGrupo extends Component {
   }
 
   handleClick = event => {
-    const {nombre, editing} = this.state;
+    const {nombre} = this.state;
+    const {editing, onGuardar} = this.props;
     event.preventDefault();
     const trimmedNombre = nombre.trim();
     if (trimmedNombre.length > 0) {
       if (!editing) this.setState({nombre: ''});
-      this.props.onGuardar(trimmedNombre);
+      onGuardar(trimmedNombre);
     }
   };
 

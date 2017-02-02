@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <ul>
+          <ul className="App-nav">
             <li><IndexLink to="/">Home</IndexLink></li>
             <li><Link to="/grupos">Grupos</Link></li>
             <li><Link to="/logout">Salir</Link></li>
@@ -24,9 +24,7 @@ class App extends Component {
         <div className="App-intro">
           <div>
             <VistaEstadisticas estadisticas={e}/>
-            <div>
-              {this.props.children || <Link to="/grupos">Ver Grupos</Link>}
-            </div>
+            {this.props.children || <Link to="/grupos">Ver Grupos</Link>}
           </div>
         </div>
       </div>

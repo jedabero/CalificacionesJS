@@ -3,11 +3,13 @@
  */
 import React, {PropTypes} from 'react';
 
+import './VistaEstadisticas.css';
+
 const VistaEstadisticas = ({estadisticas}) => (
-  <ul>
-    <li>Grupos <span>{estadisticas.grupos}</span></li>
-    <li>Periodos <span>{estadisticas.periodos}</span></li>
-    <li>Asignaturas <span>{estadisticas.asignaturas}</span></li>
+  <ul className="estadisticas">
+    <li>Grupos <span className="badge">{estadisticas.grupos}</span></li>
+    <li>Periodos <span className="badge">{estadisticas.periodos}</span></li>
+    <li>Asignaturas <span className="badge">{estadisticas.asignaturas}</span></li>
   </ul>
 );
 
