@@ -1,0 +1,20 @@
+.modulo-periodo {
+  text-align: start;
+}
+.modulo-periodo h4 {
+  display: inline-table;
+  margin: 0 16px 20px 16px;
+  padding: 0 16px;
+  border-bottom: 4px solid #0B0B0B;
+}
+
+.nombre-periodo {
+  padding: 0 0 16px 32px;
+}
+
+.ver-asignaturas {
+  display: flex;
+  margin: 16px 0;
+  padding-left: 32px;
+  align-items: center;
+}

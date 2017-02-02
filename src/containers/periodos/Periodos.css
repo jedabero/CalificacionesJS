@@ -1,0 +1,9 @@
+.modulo-periodos {
+  text-align: start;
+}
+.modulo-periodos h3 {
+  display: inline-table;
+  margin: 0 16px 20px 16px;
+  padding: 0 16px;
+  border-bottom: 4px solid #0B0B0B;
+}

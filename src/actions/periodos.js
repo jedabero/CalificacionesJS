@@ -15,9 +15,9 @@ export function agregarPeriodo(nombre, orden, grupo_id) {
   }
 }
 
-export function actualizarPeriodo(id, estado, nombre, orden, grupo_id) {
+export function actualizarPeriodo(id, estado, nombre, orden) {
   return {
     type: ACTUALIZAR_PERIODO,
-    id, estado, nombre, orden, grupo_id
+    id, estado, nombre, orden
   }
 }

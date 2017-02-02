@@ -1,0 +1,29 @@
+.item-periodo {
+  display: block;
+  cursor: pointer;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 8px 16px;
+  color: black;
+}
+
+.item-periodo:hover {
+  background-color: #F0F0F0;
+}
+
+.item-periodo.disabled {
+  color: gray
+}
+
+.item-periodo > .badge {
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  color: white;
+  background-color: blue;
+}
+
+.item-periodo.disabled > .badge {
+    background-color: gray;
+}

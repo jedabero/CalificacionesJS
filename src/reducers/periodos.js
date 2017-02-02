@@ -20,8 +20,7 @@ function periodo(state = {}, action) {
       return Object.assign({}, state, {
         estado: action.estado,
         nombre: action.nombre,
-        orden: action.orden,
-        grupo_id: action.grupo_id
+        orden: action.orden
       });
     default:
       return state;

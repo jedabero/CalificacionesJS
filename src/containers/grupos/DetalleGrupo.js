@@ -11,7 +11,6 @@ import FormularioGrupo from './FormularioGrupo';
 import './DetalleGrupo.css';
 
 const DetalleGrupo = ({children, grupo, onGuardar}) => {
-  if (children) return children;
   const handleGuardar = nombre => onGuardar(grupo.id, grupo.estado, nombre);
   return (
     <div className="modulo-grupo">
