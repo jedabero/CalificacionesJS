@@ -18,7 +18,7 @@ class FormularioGrupo extends Component {
     event.preventDefault();
     const trimmedNombre = nombre.trim();
     if (trimmedNombre.length > 0) {
-      if (editing) this.setState({nombre: ''});
+      if (!editing) this.setState({nombre: ''});
       this.props.onGuardar(trimmedNombre);
     }
   };

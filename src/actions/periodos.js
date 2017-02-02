@@ -1,15 +1,15 @@
 /**
  * Created by jedabero on 30/01/17.
  */
+import {ids} from '../localStore';
 
 export const AGREGAR_PERIODO = 'AGREGAR_PERIODO';
 export const ACTUALIZAR_PERIODO = 'ACTUALIZAR_PERIODO';
 
-let periodoId = 0;
 export function agregarPeriodo(nombre, orden, grupo_id) {
   return {
     type: AGREGAR_PERIODO,
-    id: periodoId++,
+    id: ++ids.periodoId,
     estado: 1,
     nombre, orden, grupo_id
   }

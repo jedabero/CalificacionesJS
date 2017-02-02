@@ -1,19 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux'
+import {createStore} from 'redux';
+import throttle from 'lodash/throttle';
 
 import Root from './Root';
+import {loadState, saveState} from './localStore';
 import appReducer from './reducers/index';
 import './index.css';
 
-const state = localStorage.getItem('state');
-const persistedState = state ? JSON.parse(state) : {};
+const persistedState = loadState();
 
 const store = createStore(appReducer, persistedState);
 
-/*let unsubscribe = */store.subscribe(() => {
-  localStorage.setItem('state', JSON.stringify(store.getState()));
-});
+store.subscribe(throttle(() => saveState(store.getState()), 5000));
 
 ReactDOM.render(
   <Root store={store}/>,

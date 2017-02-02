@@ -1,15 +1,15 @@
 /**
  * Created by jedabero on 30/01/17.
  */
+import {ids} from '../localStore';
 
 export const AGREGAR_GRUPO = 'AGREGAR_GRUPO';
 export const ACTUALIZAR_GRUPO = 'ACTUALIZAR_GRUPO';
 
-let grupoId = 0;
 export function agregarGrupo(nombre) {
   return {
     type: AGREGAR_GRUPO,
-    id: ++grupoId,
+    id: ++ids.grupoId,
     estado: 1,
     nombre
   }
