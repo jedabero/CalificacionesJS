@@ -14,7 +14,7 @@ const Grupos = ({children, grupos, onGuardar, onGrupoClick}) => {
   if (children) return children;
   return (
     <div className="modulo-grupos">
-      <h3>Grupos</h3>
+      <h2>Grupos</h2>
       <FormularioGrupo nombreLabel="Nuevo grupo" onGuardar={onGuardar}/>
       <ListaGrupo grupos={grupos} onGrupoClick={onGrupoClick}/>
     </div>

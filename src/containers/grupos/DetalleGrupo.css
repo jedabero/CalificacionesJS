@@ -1,0 +1,20 @@
+.modulo-grupo {
+  text-align: start;
+}
+.modulo-grupo h3 {
+  display: inline-table;
+  margin: 0 16px 20px 16px;
+  padding: 0 16px;
+  border-bottom: 4px solid #0B0B0B;
+}
+
+.nombre-grupo {
+  padding: 0 0 16px 32px;
+}
+
+.ver-periodos {
+  display: flex;
+  margin: 16px 0;
+  padding-left: 32px;
+  align-items: center;
+}
