@@ -4,9 +4,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {agregarPeriodo} from '../../actions/periodos';
-import Periodo from '../../shapes/Periodo';
-import ListaPeriodo from '../../components/periodos/ListaPeriodo';
+import {agregarPeriodo} from '../actions';
+import Periodo from '../shape';
+import ListaPeriodo from '../components/ListaPeriodo';
 import FormularioPeriodo from './FormularioPeriodo';
 import './Periodos.css';
 

@@ -1,7 +1,7 @@
 /**
  * Created by jedabero on 30/01/17.
  */
-import {AGREGAR_PERIODO, ACTUALIZAR_PERIODO} from '../actions/periodos';
+import {AGREGAR_PERIODO, ACTUALIZAR_PERIODO} from '../Periodos/actions';
 
 function periodo(state = {}, action) {
   switch (action.type) {

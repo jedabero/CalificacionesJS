@@ -5,8 +5,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router'
 
-import {actualizarPeriodo} from '../../actions/periodos';
-import Periodo from '../../shapes/Periodo';
+import {actualizarPeriodo} from '../actions';
+import Periodo from '../shape';
 import FormularioPeriodo from './FormularioPeriodo';
 import './DetallePeriodo.css';
 

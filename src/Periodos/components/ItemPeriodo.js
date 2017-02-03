@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 
-import Periodo from '../../shapes/Periodo';
+import Periodo from '../shape';
 import './ItemPeriodo.css';
 
 const ItemPeriodo = ({periodo, onClick}) => (
