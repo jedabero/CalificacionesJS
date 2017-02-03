@@ -3,10 +3,8 @@ import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
-import Grupos from './Grupos/containers/Grupos';
-import Grupo from './Grupos/containers/DetalleGrupo';
-import Periodos from './Periodos/containers/Periodos';
-import Periodo from './Periodos/containers/DetallePeriodo';
+import {Grupos, Grupo} from './Grupos';
+import {Periodos, Periodo} from './Periodos';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
