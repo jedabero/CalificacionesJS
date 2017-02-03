@@ -13,6 +13,10 @@ class FormularioGrupo extends Component {
     };
   }
 
+  componentWillReceiveProps ({nombre, orden}) {
+    this.setState({nombre, orden});
+  }
+
   handleClick = event => {
     const {nombre} = this.state;
     const {editing, onGuardar} = this.props;

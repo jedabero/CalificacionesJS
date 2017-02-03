@@ -11,12 +11,12 @@ import FormularioGrupo from './FormularioGrupo';
 import './Grupos.css';
 
 const Grupos = ({children, grupos, onGuardar, onGrupoClick}) => {
-  if (children) return children;
   return (
     <div className="modulo-grupos">
       <h2>Grupos</h2>
       <FormularioGrupo nombreLabel="Nuevo grupo" onGuardar={onGuardar}/>
       <ListaGrupo grupos={grupos} onGrupoClick={onGrupoClick}/>
+      {children}
     </div>
   );
 };
