@@ -5,8 +5,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router'
 
-import {actualizarGrupo} from '../../actions/grupos';
-import Grupo from '../../shapes/Grupo';
+import {actualizarGrupo} from '../actions';
+import Grupo from '../shape';
 import FormularioGrupo from './FormularioGrupo';
 import './DetalleGrupo.css';
 

@@ -4,9 +4,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {agregarGrupo} from '../../actions/grupos';
-import Grupo from '../../shapes/Grupo';
-import ListaGrupo from '../../components/grupos/ListaGrupo';
+import {agregarGrupo} from '../actions';
+import Grupo from '../shape';
+import ListaGrupo from '../components/ListaGrupo';
 import FormularioGrupo from './FormularioGrupo';
 import './Grupos.css';
 

@@ -3,8 +3,8 @@ import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
 
 import App from './App';
-import Grupos from './containers/grupos/Grupos';
-import Grupo from './containers/grupos/DetalleGrupo';
+import Grupos from './Grupos/containers/Grupos';
+import Grupo from './Grupos/containers/DetalleGrupo';
 import Periodos from './containers/periodos/Periodos';
 import Periodo from './containers/periodos/DetallePeriodo';
 import './index.css';

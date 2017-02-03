@@ -1,7 +1,7 @@
 /**
  * Created by jedabero on 30/01/17.
  */
-import {AGREGAR_GRUPO, ACTUALIZAR_GRUPO} from '../actions/grupos';
+import {AGREGAR_GRUPO, ACTUALIZAR_GRUPO} from '../Grupos/actions';
 
 function grupo(state = {}, action) {
   switch (action.type) {

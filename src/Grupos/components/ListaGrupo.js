@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 
-import Grupo from '../../shapes/Grupo';
+import Grupo from '../shape';
 import ItemGrupo from './ItemGrupo';
 import './ListaGrupo.css'
 

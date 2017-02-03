@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 
-import Grupo from '../../shapes/Grupo';
+import Grupo from '../shape';
 import './ItemGrupo.css';
 
 const ItemGrupo = ({grupo, onClick}) => (

@@ -25,7 +25,7 @@ const DetallePeriodo = ({children, periodo, onGuardar}) => {
       {
         children ||
         <div className="ver-asignaturas">
-          <Link to={`/grupos/${periodo.grupo_id}/periodos/${periodo.id}`}>Ver asignaturas</Link>
+          <Link to={`/grupos/${periodo.grupo_id}/periodos/${periodo.id}/asignaturas`}>Ver asignaturas</Link>
         </div>
       }
     </div>
