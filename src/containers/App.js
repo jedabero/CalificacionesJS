@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
 
-import VistaEstadisticas from './components/VistaEstadisticas';
+import VistaEstadisticas from '../components/VistaEstadisticas';
 import './App.css';
 
 class App extends Component {

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route, hashHistory} from 'react-router';
 
-import App from './App';
+import App from './containers/App';
 import {Grupos, Grupo} from './Grupos';
 import {Periodos, Periodo} from './Periodos';
 import './index.css';
