@@ -11,13 +11,13 @@ export function agregarAsignatura(nombre, peso, periodo_id) {
     type: AGREGAR_ASIGNATURA,
     id: ++ids.asignaturaId,
     estado: 1,
-    nombre, peso,periodo_id
+    nombre, peso, periodo_id
   }
 }
 
-export function actualizarAsignatura(id, estado, nombre, peso, periodo_id) {
+export function actualizarAsignatura(id, estado, nombre, peso) {
   return {
     type: ACTUALIZAR_ASIGNATURA,
-    id, estado, nombre, peso, periodo_id
+    id, estado, nombre, peso
   }
 }
