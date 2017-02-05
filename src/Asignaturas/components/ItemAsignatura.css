@@ -1,0 +1,29 @@
+.item-asignatura {
+  display: block;
+  cursor: pointer;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  padding: 8px 16px;
+  color: black;
+}
+
+.item-asignatura:hover {
+  background-color: #F0F0F0;
+}
+
+.item-asignatura.disabled {
+  color: gray
+}
+
+.item-asignatura > .badge {
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  color: white;
+  background-color: blue;
+}
+
+.item-asignatura.disabled > .badge {
+    background-color: gray;
+}
