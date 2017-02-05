@@ -5,13 +5,14 @@ import {Router, Route, hashHistory} from 'react-router';
 import App from './containers/App';
 import {Grupos, Grupo} from './Grupos';
 import {Periodos, Periodo} from './Periodos';
+import {Asignaturas, Asignatura} from './Asignaturas';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
 const Logout = () => (<div>Logout</div>);
 const Registro = () => (<div>Registro</div>);
-const Asignaturas = ({params, children}) => (<div><div>Asignaturas</div><div>{children}</div></div>);
-const Asignatura = ({params, children}) => (<div><div>Asignatura #{params.asignaturaId}</div><div>{children}</div></div>);
+const Notas = ({params, children}) => (<div><div>Notas</div><div>{children}</div></div>);
+const Nota = ({params, children}) => (<div><div>Nota #{params.notaId}</div><div>3.5</div></div>);
 
 const Root = ({store}) => (
   <Provider store={store}>
@@ -22,7 +23,11 @@ const Root = ({store}) => (
             <Route path="periodos" component={Periodos}>
               <Route path=":periodoId" component={Periodo}>
                 <Route path="asignaturas" component={Asignaturas}>
-                  <Route path=":asignaturaId" component={Asignatura}/>
+                  <Route path=":asignaturaId" component={Asignatura}>
+                    <Route path="notas" component={Notas}>
+                      <Route path=":notaId" component={Nota}/>
+                    </Route>
+                  </Route>
                 </Route>
               </Route>
             </Route>

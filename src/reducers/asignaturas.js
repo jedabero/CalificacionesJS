@@ -1,7 +1,7 @@
 /**
  * Created by jedabero on 30/01/17.
  */
-import {AGREGAR_ASIGNATURA, ACTUALIZAR_ASIGNATURA} from '../actions/asignaturas';
+import {AGREGAR_ASIGNATURA, ACTUALIZAR_ASIGNATURA} from '../Asignaturas/actions';
 
 function asignatura(state = {}, action) {
   switch (action.type) {
@@ -20,8 +20,7 @@ function asignatura(state = {}, action) {
       return Object.assign({}, state, {
         estado: action.estado,
         nombre: action.nombre,
-        peso: action.peso,
-        periodo_id: action.periodo_id
+        peso: action.peso
       });
     default:
       return state;

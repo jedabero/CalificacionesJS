@@ -45,7 +45,7 @@ class FormularioPeriodo extends Component {
             onChange={event => this.setState({nombre: event.target.value})} />
         </div>
         <div className="input-group">
-          <label className="input-label" htmlFor="inputNombreGrupo">{ordenLabel}</label>{' '}
+          <label className="input-label" htmlFor="inputOrdenPeriodo">{ordenLabel}</label>{' '}
           <input
             className="form-input"
             type="number"
