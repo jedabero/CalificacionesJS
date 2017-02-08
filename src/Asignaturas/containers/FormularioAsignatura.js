@@ -6,31 +6,31 @@ import React, {Component, PropTypes} from 'react';
 import './FormularioAsignatura.css';
 
 class FormularioAsignatura extends Component {
-  constructor({nombre, peso}) {
+  constructor({nombre, codigo, peso}) {
     super();
     this.state = {
-      nombre, peso
+      nombre, codigo, peso
     };
   }
 
-  componentWillReceiveProps ({nombre, peso}) {
-    this.setState({nombre, peso});
+  componentWillReceiveProps ({nombre, codigo, peso}) {
+    this.setState({nombre, codigo, peso});
   }
 
   handleClick = event => {
-    const {nombre, peso} = this.state;
+    const {nombre, codigo, peso} = this.state;
     const {editing, onGuardar} = this.props;
     event.preventDefault();
     const trimmedNombre = nombre.trim();
     if (trimmedNombre.length > 0) {
-      if (!editing) this.setState({nombre: ''});
-      onGuardar(trimmedNombre, peso);
+      if (!editing) this.setState({nombre: '', codigo: ''});
+      onGuardar(trimmedNombre, codigo, peso);
     }
   };
 
   render() {
-    const {nombre, peso} = this.state;
-    const {nombreLabel, pesoLabel} = this.props;
+    const {nombre, codigo, peso} = this.state;
+    const {nombreLabel, codigoLabel, pesoLabel} = this.props;
     return (
       <form className="form">
         <div className="input-group">
@@ -43,6 +43,17 @@ class FormularioAsignatura extends Component {
             placeholder="Nombre"
             value={nombre}
             onChange={event => this.setState({nombre: event.target.value})} />
+        </div>
+        <div className="input-group">
+          <label className="input-label" htmlFor="inputCodigoAsignatura">{codigoLabel}</label>{' '}
+          <input
+            className="form-input"
+            type="text"
+            id="inputCodigoAsignatura"
+            name="codigo"
+            placeholder="Código"
+            value={codigo}
+            onChange={event => this.setState({codigo: event.target.value})} />
         </div>
         <div className="input-group">
           <label className="input-label" htmlFor="inputPesoAsignatura">{pesoLabel}</label>{' '}
@@ -65,6 +76,8 @@ class FormularioAsignatura extends Component {
 FormularioAsignatura.propTypes = {
   nombre: PropTypes.string,
   nombreLabel: PropTypes.string,
+  codigo: PropTypes.string,
+  codigoLabel: PropTypes.string,
   peso: PropTypes.number,
   pesoLabel: PropTypes.string,
   editing: PropTypes.bool,
@@ -74,6 +87,8 @@ FormularioAsignatura.propTypes = {
 FormularioAsignatura.defaultProps = {
   nombre: '',
   nombreLabel: 'Nombre',
+  codigo: '',
+  codigoLabel: 'Código',
   peso: 1,
   pesoLabel: 'Peso',
   editing: false

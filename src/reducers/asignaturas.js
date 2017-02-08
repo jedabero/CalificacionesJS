@@ -10,6 +10,7 @@ function asignatura(state = {}, action) {
         id: action.id,
         estado: action.estado,
         nombre: action.nombre,
+        codigo: action.codigo,
         peso: action.peso,
         periodo_id: action.periodo_id
       };
@@ -20,6 +21,7 @@ function asignatura(state = {}, action) {
       return Object.assign({}, state, {
         estado: action.estado,
         nombre: action.nombre,
+        codigo: action.codigo,
         peso: action.peso
       });
     default:

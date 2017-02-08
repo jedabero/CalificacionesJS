@@ -37,9 +37,9 @@ const mapStateToProps = ({asignaturas}, {params}) => {
 const mapDispatchToProps = (dispatch, {router, params}) => {
   const {grupoId, periodoId} = params;
   return {
-    onGuardar: (nombre, peso) => {
+    onGuardar: (nombre, codigo, peso) => {
       const periodo_id = parseInt(periodoId, 10);
-      dispatch(agregarAsignatura(nombre, peso, periodo_id));
+      dispatch(agregarAsignatura(nombre, codigo, peso, periodo_id));
     },
     onAsignaturaClick: asignatura => {
       router.push(`/grupos/${grupoId}/periodos/${asignatura.periodo_id}/asignaturas/${asignatura.id}`);

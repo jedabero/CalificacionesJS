@@ -11,15 +11,16 @@ import FormularioAsignatura from './FormularioAsignatura';
 import './DetalleAsignatura.css';
 
 const DetalleAsignatura = ({children, asignatura, onGuardar, params}) => {
-  const {id, estado, nombre, peso, periodo_id} = asignatura;
-  const handleGuardar = (nombre, peso) => onGuardar(id, estado, nombre, peso);
+  const {id, estado, nombre, codigo, peso, periodo_id} = asignatura;
+  const handleGuardar = (nombre, codigo, peso) => onGuardar(id, estado, nombre, codigo, peso);
   return (
     <div className="modulo-asignatura">
       <h4>Asignatura #{id}</h4>
-      <div className="nombre-asignatura">{nombre} <span className="badge">{peso}</span></div>
+      <div className="nombre-asignatura">{nombre} - {codigo} <span className="badge">{peso}</span></div>
       <FormularioAsignatura
         editing
         nombre={nombre}
+        codigo={codigo}
         peso={peso}
         onGuardar={handleGuardar}
       />
@@ -42,8 +43,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onGuardar: (id, estado, nombre, peso) => {
-      dispatch(actualizarAsignatura(id, estado, nombre, peso));
+    onGuardar: (id, estado, nombre, codigo, peso) => {
+      dispatch(actualizarAsignatura(id, estado, nombre, codigo, peso));
     }
   }
 };

@@ -10,7 +10,7 @@ const ItemAsignatura = ({asignatura, onClick}) => (
   <li className={`item-asignatura${asignatura.estado === 1 ? "" : " disabled" }`}
     onClick={onClick} >
     <span className="badge">{asignatura.id}</span>
-    {asignatura.nombre}
+    {asignatura.nombre} - {asignatura.codigo}
     <span className="badge">{asignatura.peso}</span>
   </li>
 );
