@@ -15,9 +15,9 @@ export function agregarNota(valor, peso, orden, asignatura_id) {
   }
 }
 
-export function actualizarNota(id, estado, valor, peso, orden, asignatura_id) {
+export function actualizarNota(id, estado, valor, peso, orden) {
   return {
     type: ACTUALIZAR_NOTA,
-    id, estado, valor, peso, orden, asignatura_id
+    id, estado, valor, peso, orden
   }
 }

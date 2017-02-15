@@ -6,13 +6,12 @@ import App from './containers/App';
 import {Grupos, Grupo} from './Grupos';
 import {Periodos, Periodo} from './Periodos';
 import {Asignaturas, Asignatura} from './Asignaturas';
+import {Notas, Nota} from './Notas';
 import './index.css';
 
 const Login = () => (<div>Login</div>);
 const Logout = () => (<div>Logout</div>);
 const Registro = () => (<div>Registro</div>);
-const Notas = ({params, children}) => (<div><div>Notas</div><div>{children}</div></div>);
-const Nota = ({params, children}) => (<div><div>Nota #{params.notaId}</div><div>3.5</div></div>);
 
 const Root = ({store}) => (
   <Provider store={store}>

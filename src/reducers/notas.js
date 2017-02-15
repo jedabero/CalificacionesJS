@@ -1,7 +1,7 @@
 /**
  * Created by jedabero on 30/01/17.
  */
-import {AGREGAR_NOTA, ACTUALIZAR_NOTA} from '../actions/notas';
+import {AGREGAR_NOTA, ACTUALIZAR_NOTA} from '../Notas/actions';
 
 function nota(state = {}, action) {
   switch (action.type) {
@@ -22,8 +22,7 @@ function nota(state = {}, action) {
         estado: action.estado,
         valor: action.valor,
         peso: action.peso,
-        orden: action.orden,
-        asignatura_id: action.asignatura_id
+        orden: action.orden
       });
     default:
       return state;
